@@ -26,7 +26,7 @@
   "image": "https://snakecatchingbykev.com.au/images/og.jpg",
   "address": {"@type": "PostalAddress", "addressLocality": "Wonthaggi", "addressRegion": "VIC", "postalCode": "3995", "addressCountry": "AU"},
   "openingHours": "Mo-Su 00:00-24:00",
-  "areaServed": ["Wonthaggi","North Wonthaggi","Cape Paterson","Inverloch","Venus Bay","Tarwin Lower","Woolamai","Kilcunda","Dalyston","Ryanston","Lance Creek","Grantville","Corinella","Coronet Bay","Phillip Island","Bass Coast","South Gippsland"],
+  "areaServed": ["Wonthaggi","North Wonthaggi","Cape Paterson","Inverloch","Venus Bay","Tarwin Lower","Woolamai","Kilcunda","Dalyston","Ryanston","Lance Creek","Anderson","Wattle Bank","San Remo","Phillip Island","Bass Coast","South Gippsland"],
   "sameAs": ["https://www.facebook.com/profile.php?id=61580798776194"]
 }
 </script>
@@ -109,6 +109,25 @@
   /* Area */
   .towns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
   .towns span { background: #fff; border: 1px solid var(--cream-2); border-radius: 999px; padding: 6px 14px; font-size: 14.5px; font-weight: 600; color: var(--navy); }
+
+  /* Gallery */
+  .gallery { columns: 3 240px; column-gap: 14px; }
+  .gallery a { display: block; margin: 0 0 14px; break-inside: avoid; border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(34,32,27,.12); }
+  .gallery img { width: 100%; display: block; transition: transform .25s ease; }
+  .gallery a:hover img { transform: scale(1.03); }
+  .gallery figcaption {
+    position: absolute; left: 0; right: 0; bottom: 0; margin: 0;
+    padding: 22px 12px 10px; font-size: 13px; color: #fff;
+    background: linear-gradient(transparent, rgba(16,26,45,.85));
+  }
+  .videotile {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    background: var(--navy); color: var(--cream); text-decoration: none;
+    min-height: 170px; padding: 24px 18px; text-align: center; gap: 8px;
+  }
+  .videotile .play { width: 54px; height: 54px; border-radius: 50%; background: var(--gold); color: var(--navy); display: grid; place-items: center; font-size: 22px; padding-left: 4px; }
+  .videotile strong { font-family: "Oswald", system-ui, sans-serif; text-transform: uppercase; font-size: 17px; letter-spacing: .03em; }
+  .videotile span { font-size: 13.5px; color: #C6CBD8; }
 
   /* About */
   .about { display: grid; gap: 30px; grid-template-columns: 1fr; align-items: center; }
@@ -213,7 +232,7 @@
     <h2>Covering the Bass Coast &amp; South Gippsland</h2>
     <p class="sub">Based in Wonthaggi and on the road across the region:</p>
     <div class="towns">
-      <span>Wonthaggi</span><span>Cape Paterson</span><span>Inverloch</span><span>Venus Bay</span><span>Tarwin Lower</span><span>Kilcunda</span><span>Dalyston</span><span>Woolamai</span><span>Grantville</span><span>Corinella</span><span>Coronet Bay</span><span>Phillip Island</span><span>Lance Creek</span><span>Ryanston</span><span>+ surrounding areas</span>
+      <span>Wonthaggi</span><span>Cape Paterson</span><span>Inverloch</span><span>Venus Bay</span><span>Tarwin Lower</span><span>Kilcunda</span><span>Dalyston</span><span>Woolamai</span><span>Anderson</span><span>Wattle Bank</span><span>San Remo</span><span>Phillip Island</span><span>Lance Creek</span><span>Ryanston</span><span>+ surrounding areas</span>
     </div>
   </div>
 </section>
@@ -229,6 +248,24 @@
         <blockquote>"Great experience with Kev. Very nice guy and he took time to explain a lot about snakes. Definitely a nature lover. Highly recommend!"<cite>— Facebook review</cite></blockquote>
       </div>
       <img src="images/about.jpg" alt="Kev Girstun holding a snake — 2026 Bass Coast Business Awards finalist" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="wrap">
+    <p class="kicker">Gallery</p>
+    <h2>Out on the job — and off it</h2>
+    <p class="sub">A few of the animals Kev has caught, relocated, or simply admired. Tap any photo to see it full size.</p>
+    <div class="gallery">
+      <a href="images/gallery-copperhead-closeup.jpg" target="_blank" rel="noopener"><img src="images/gallery-copperhead-closeup.jpg" alt="Lowland copperhead close up, tongue out" loading="lazy"><figcaption>Lowland copperhead — the Bass Coast's most common snake</figcaption></a>
+      <a href="https://www.facebook.com/profile.php?id=61580798776194&sk=reels" target="_blank" rel="noopener" class="videotile"><span class="play">▶</span><strong>Watch Kev's videos</strong><span>Catches, releases and snake facts — on Facebook</span></a>
+      <a href="images/gallery-copperhead-mulch.jpg" target="_blank" rel="noopener"><img src="images/gallery-copperhead-mulch.jpg" alt="Copperhead moving over garden mulch" loading="lazy"><figcaption>A copperhead on the move through garden mulch</figcaption></a>
+      <a href="images/gallery-frog.jpg" target="_blank" rel="noopener"><img src="images/gallery-frog.jpg" alt="Frog beside a fence post at night" loading="lazy"><figcaption>Not just snakes — wildlife of all kinds</figcaption></a>
+      <a href="images/gallery-copperhead-tail.jpg" target="_blank" rel="noopener"><img src="images/gallery-copperhead-tail.jpg" alt="Copperhead disappearing into mulch" loading="lazy"><figcaption>Spotted in a local backyard</figcaption></a>
+      <a href="images/gallery-green-lizard.jpg" target="_blank" rel="noopener"><img src="images/gallery-green-lizard.jpg" alt="Bright green lizard on a branch at night" loading="lazy"><figcaption>From Kev's reptile travels in Indonesia</figcaption></a>
+      <a href="images/gallery-iguanas.jpg" target="_blank" rel="noopener"><img src="images/gallery-iguanas.jpg" alt="Iguanas resting in a frangipani tree" loading="lazy"><figcaption>Iguanas soaking up the morning sun, Bali</figcaption></a>
+      <a href="images/gallery-leaf-lizard.jpg" target="_blank" rel="noopener"><img src="images/gallery-leaf-lizard.jpg" alt="Long-tailed lizard curled on a leaf" loading="lazy"><figcaption>A long-tailed grass lizard striking a pose</figcaption></a>
     </div>
   </div>
 </section>
