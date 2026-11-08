@@ -1,0 +1,51 @@
+[
+ {
+  "id": "gallery-copperhead-closeup.jpg",
+  "src": "images/gallery-copperhead-closeup.jpg",
+  "type": "image",
+  "caption": "Lowland copperhead \u2014 the Bass Coast's most common snake",
+  "added": 1756200000
+ },
+ {
+  "id": "gallery-copperhead-mulch.jpg",
+  "src": "images/gallery-copperhead-mulch.jpg",
+  "type": "image",
+  "caption": "A copperhead on the move through garden mulch",
+  "added": 1756200001
+ },
+ {
+  "id": "gallery-frog.jpg",
+  "src": "images/gallery-frog.jpg",
+  "type": "image",
+  "caption": "Not just snakes \u2014 wildlife of all kinds",
+  "added": 1756200002
+ },
+ {
+  "id": "gallery-copperhead-tail.jpg",
+  "src": "images/gallery-copperhead-tail.jpg",
+  "type": "image",
+  "caption": "Spotted in a local backyard",
+  "added": 1756200003
+ },
+ {
+  "id": "gallery-green-lizard.jpg",
+  "src": "images/gallery-green-lizard.jpg",
+  "type": "image",
+  "caption": "From Kev's reptile travels in Indonesia",
+  "added": 1756200004
+ },
+ {
+  "id": "gallery-iguanas.jpg",
+  "src": "images/gallery-iguanas.jpg",
+  "type": "image",
+  "caption": "Iguanas soaking up the morning sun, Bali",
+  "added": 1756200005
+ },
+ {
+  "id": "gallery-leaf-lizard.jpg",
+  "src": "images/gallery-leaf-lizard.jpg",
+  "type": "image",
+  "caption": "A long-tailed grass lizard striking a pose",
+  "added": 1756200006
+ }
+]

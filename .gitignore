@@ -1,0 +1,5 @@
+manage/config.php
+gallery-data/.loginlock
+gallery-data/media/*
+!gallery-data/media/.htaccess
+!gallery-data/media/index.html

@@ -112,9 +112,11 @@
 
   /* Gallery */
   .gallery { columns: 3 240px; column-gap: 14px; }
-  .gallery a { display: block; margin: 0 0 14px; break-inside: avoid; border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(34,32,27,.12); }
-  .gallery img { width: 100%; display: block; transition: transform .25s ease; }
+  .gallery a, .gallery .gitem { display: block; margin: 0 0 14px; break-inside: avoid; border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 2px 8px rgba(34,32,27,.12); }
+  .gallery img, .gallery video { width: 100%; display: block; transition: transform .25s ease; }
   .gallery a:hover img { transform: scale(1.03); }
+  .gallery .vid { background: #000; }
+  .gallery .vid figcaption { position: static; background: var(--navy); padding: 9px 12px; }
   .gallery figcaption {
     position: absolute; left: 0; right: 0; bottom: 0; margin: 0;
     padding: 22px 12px 10px; font-size: 13px; color: #fff;
@@ -257,18 +259,44 @@
     <p class="kicker">Gallery</p>
     <h2>Out on the job — and off it</h2>
     <p class="sub">A few of the animals Kev has caught, relocated, or simply admired. Tap any photo to see it full size.</p>
-    <div class="gallery">
-      <a href="images/gallery-copperhead-closeup.jpg" target="_blank" rel="noopener"><img src="images/gallery-copperhead-closeup.jpg" alt="Lowland copperhead close up, tongue out" loading="lazy"><figcaption>Lowland copperhead — the Bass Coast's most common snake</figcaption></a>
+    <div class="gallery" id="galleryGrid">
       <a href="https://www.facebook.com/profile.php?id=61580798776194&sk=reels" target="_blank" rel="noopener" class="videotile"><span class="play">▶</span><strong>Watch Kev's videos</strong><span>Catches, releases and snake facts — on Facebook</span></a>
-      <a href="images/gallery-copperhead-mulch.jpg" target="_blank" rel="noopener"><img src="images/gallery-copperhead-mulch.jpg" alt="Copperhead moving over garden mulch" loading="lazy"><figcaption>A copperhead on the move through garden mulch</figcaption></a>
-      <a href="images/gallery-frog.jpg" target="_blank" rel="noopener"><img src="images/gallery-frog.jpg" alt="Frog beside a fence post at night" loading="lazy"><figcaption>Not just snakes — wildlife of all kinds</figcaption></a>
-      <a href="images/gallery-copperhead-tail.jpg" target="_blank" rel="noopener"><img src="images/gallery-copperhead-tail.jpg" alt="Copperhead disappearing into mulch" loading="lazy"><figcaption>Spotted in a local backyard</figcaption></a>
-      <a href="images/gallery-green-lizard.jpg" target="_blank" rel="noopener"><img src="images/gallery-green-lizard.jpg" alt="Bright green lizard on a branch at night" loading="lazy"><figcaption>From Kev's reptile travels in Indonesia</figcaption></a>
-      <a href="images/gallery-iguanas.jpg" target="_blank" rel="noopener"><img src="images/gallery-iguanas.jpg" alt="Iguanas resting in a frangipani tree" loading="lazy"><figcaption>Iguanas soaking up the morning sun, Bali</figcaption></a>
-      <a href="images/gallery-leaf-lizard.jpg" target="_blank" rel="noopener"><img src="images/gallery-leaf-lizard.jpg" alt="Long-tailed lizard curled on a leaf" loading="lazy"><figcaption>A long-tailed grass lizard striking a pose</figcaption></a>
     </div>
   </div>
 </section>
+<script>
+/* Gallery items live in gallery-data/gallery.json, managed by Kev at /manage/ */
+fetch('gallery-data/gallery.json', {cache: 'no-cache'})
+  .then(r => r.json())
+  .then(items => {
+    const grid = document.getElementById('galleryGrid');
+    items.forEach(it => {
+      let el;
+      if (it.type === 'video') {
+        el = document.createElement('div');
+        el.className = 'gitem vid';
+        const v = document.createElement('video');
+        v.src = it.src; v.controls = true; v.preload = 'metadata';
+        v.setAttribute('playsinline', '');
+        el.appendChild(v);
+      } else {
+        el = document.createElement('a');
+        el.className = 'gitem';
+        el.href = it.src; el.target = '_blank'; el.rel = 'noopener';
+        const img = document.createElement('img');
+        img.src = it.src; img.loading = 'lazy'; img.alt = it.caption || 'Gallery photo';
+        el.appendChild(img);
+      }
+      if (it.caption) {
+        const cap = document.createElement('figcaption');
+        cap.textContent = it.caption;
+        el.appendChild(cap);
+      }
+      grid.appendChild(el);
+    });
+  })
+  .catch(() => {});
+</script>
 
 <section class="cta">
   <div class="wrap">
